@@ -1,0 +1,26 @@
+<div class="page">
+
+    <!-- 🔥 HERO SECTION -->
+    <section class="hero">
+        <h1>🎬 Movie Recommendation System</h1>
+         <button class="logout-btn" (click)="logout()">Logout</button>
+        <p>Rate movies • Discover similar films • Get AI-powered recommendations</p>
+    </section>
+
+    <!-- 🎞 MOVIE GRID -->
+    <div class="movie-grid">
+        <div class="movie-card" *ngFor="let movie of movies">
+            <img [src]="movie.poster_url || 'assets/posters/no-poster.jpg'" alt="{{ movie.title }}" />
+
+
+            <div class="info">
+                <h3>{{ movie.title }}</h3>
+                <p>{{ movie.genre }}</p>
+
+                <a [routerLink]="['/movies', movie.id]">View Details</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
